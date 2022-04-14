@@ -1,7 +1,6 @@
 <article class="product">
   <header>
     <% if product.quantity == 0 %>
-    <h5 class="sold-out-badge"> Sold out! <h5/>
     <%= image_tag product.image.thumb, alt: product.name %>
     <h4><%= product.name %></h4>
     <% else %>
@@ -22,7 +21,9 @@
       Details &raquo;
     <% end %>
   </footer>
-
+  <% if product.quantity == 0 %>
+      <aside class="sold-out-badge"> Sold out! </aside>
+  <% end %>
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>
