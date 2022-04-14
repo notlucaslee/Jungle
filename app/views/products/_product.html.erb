@@ -1,8 +1,14 @@
 <article class="product">
   <header>
-    <%= link_to product do %>
-      <%= image_tag product.image.thumb, alt: product.name %>
-      <h4><%= product.name %></h4>
+    <% if product.quantity == 0 %>
+    <h5 class="sold-out-badge"> Sold out! <h5/>
+    <%= image_tag product.image.thumb, alt: product.name %>
+    <h4><%= product.name %></h4>
+    <% else %>
+     <%= link_to product do %>
+       <%= image_tag product.image.thumb, alt: product.name %>
+       <h4><%= product.name %></h4>
+      <% end %>
     <% end %>
   </header>
   <p class="description">
