@@ -9,8 +9,7 @@ class Admin::DashboardController < ApplicationController
       @quantity_all += product.quantity
     end
     @quantity_all
+    @category_all = Category.count
   end
-
-  @category_all = Category.count
 
 end
