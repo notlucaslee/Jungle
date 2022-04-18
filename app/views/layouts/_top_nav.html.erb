@@ -54,7 +54,9 @@
         </li>
         <li>
           <% if current_user %>
-            <%= link_to 'Log out', '/logout' %>
+            <%= link_to '/logout' do %>
+              Log out (<%= current_user.email %>)
+            <% end %>
           <% else %>
             <%= link_to 'Sign in', '/login' %>
           <% end %>
